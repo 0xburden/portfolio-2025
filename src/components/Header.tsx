@@ -6,13 +6,16 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
   width: 100%;
+  height: 400px;
   background: linear-gradient(120deg, #d53369 0%, #daae51 100%);
   padding: 1rem;
 `;
 
 const FakeWindow = styled.div`
+  animation: appear 100ms ease;
+  animation-delay: 500ms;
+  animation-fill-mode: backwards;
   background-color: #1a1a1a;
   border-radius: 0.5rem;
   border: 1px solid #212124;
@@ -23,6 +26,15 @@ const FakeWindow = styled.div`
   position: relative;
   max-width: 36rem;
   width: 100%;
+
+  @keyframes appear {
+    from {
+      transform: scale(0) translateY(100%);
+    }
+    to {
+      transform: scale(1) translateY(0);
+    }
+  }
 `;
 
 const FakeWindowButtonContainer = styled.div`
@@ -71,7 +83,7 @@ export function Header() {
     <HeaderContainer>
       <FakeWindow>
         <FakeWindowButtons />
-        <div>$ show logo</div>
+        <div>$ show image</div>
         <div
           css={css`
             display: flex;

@@ -38,14 +38,18 @@ function App() {
     <StyledApp className="inconsolata-variable">
       <Header />
       <StyledLayoutContainer>
-        <div
+        <Resume />
+        <footer
           css={css`
-            font-size: 2rem;
+            margin-top: 4rem;
+            font-size: 1rem;
             text-align: center;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.666);
           `}
         >
-          <Resume />
-        </div>
+          Built by {import.meta.env.VITE_DISPLAY_NAME} &copy; {currentYear}
+        </footer>
       </StyledLayoutContainer>
     </StyledApp>
   );
