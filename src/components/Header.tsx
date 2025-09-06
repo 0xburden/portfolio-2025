@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import ubbenLogo from "../assets/ubben-logo.svg";
+import personalLogo from "../assets/personal-logo.svg";
+import burden from "../assets/0xburden.jpg";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -92,14 +93,28 @@ export function Header() {
             margin-top: 1rem;
           `}
         >
-          <img
-            css={css`
-              height: 12rem;
-              width: auto;
-            `}
-            src={ubbenLogo}
-            alt=""
-          />
+          {import.meta.env.VITE_DISPLAY_TYPE === "personal" ? (
+            <img
+              css={css`
+                display: block;
+                height: 12rem;
+                width: auto;
+              `}
+              src={personalLogo}
+              alt=""
+            />
+          ) : (
+            <img
+              css={css`
+                display: block;
+                height: 10rem;
+                width: auto;
+                border-radius: 100%;
+              `}
+              src={burden}
+              alt=""
+            />
+          )}
         </div>
       </FakeWindow>
     </HeaderContainer>
