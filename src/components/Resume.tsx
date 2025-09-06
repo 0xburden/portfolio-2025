@@ -34,6 +34,77 @@ export function Resume() {
         Web Developer
       </h3>
 
+      <div
+        css={css`
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+          justify-content: center;
+          padding: 1rem;
+
+          @media (min-width: 768px) {
+            flex-direction: row;
+          }
+        `}
+      >
+        <a
+          href="mailto:unburdened.dev@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          css={css`
+            color: inherit;
+            text-decoration: none;
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+            &:visited {
+              color: inherit;
+            }
+          `}
+        >
+          ✍️ Email
+        </a>
+        <a
+          href="https://github.com/0xburden"
+          target="_blank"
+          rel="noopener noreferrer"
+          css={css`
+            color: inherit;
+            text-decoration: none;
+            &:visited {
+              color: inherit;
+            }
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          `}
+        >
+          💾 Github
+        </a>
+        <a
+          href="https://discord.com/users/852412410257211423"
+          target="_blank"
+          rel="noopener noreferrer"
+          css={css`
+            color: inherit;
+            text-decoration: none;
+            &:visited {
+              color: inherit;
+            }
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          `}
+        >
+          💬 Discord
+        </a>
+      </div>
+
       <EducationSection />
       <SkillsSection />
       <ExperienceSection />
