@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
 interface Experience {
   from: string;
@@ -59,89 +59,60 @@ const EXPERIENCE: Experience[] = [
   },
 ];
 
+const Section = styled.section`
+  border-top: 2px dashed rgba(255, 255, 255, 0.666);
+  margin-top: 1rem;
+  padding: 2rem;
+  width: 100%;
+  text-align: left;
+`;
+
+const SectionTitle = styled.div`
+  font-size: 1.75rem;
+`;
+
+const ExperienceItem = styled.div`
+  margin-top: 2rem;
+  font-size: 1.25rem;
+`;
+
+const CompanyName = styled.div`
+  font-size: 1.5rem;
+  font-weight: 700;
+`;
+
+const ExperienceDetails = styled.div`
+  padding: 1rem;
+`;
+
+const DetailLabel = styled.span`
+  color: rgba(255, 255, 255, 0.666);
+`;
+
 export function ExperienceSection() {
   return (
-    <section
-      css={css`
-        border-top: 2px dashed rgba(255, 255, 255, 0.666);
-        margin-top: 1rem;
-        padding: 2rem;
-        width: 100%;
-        text-align: left;
-      `}
-    >
-      <div
-        css={css`
-          font-size: 1.75rem;
-        `}
-      >
-        Selected Experience
-      </div>
+    <Section>
+      <SectionTitle>Selected Experience</SectionTitle>
 
       {EXPERIENCE.map((exp) => (
-        <div
-          key={exp.company}
-          css={css`
-            margin-top: 2rem;
-            font-size: 1.25rem;
-          `}
-        >
-          <div
-            css={css`
-              font-size: 1.5rem;
-              font-weight: 700;
-            `}
-          >
-            {exp.company}
-          </div>
-          <div
-            css={css`
-              padding: 1rem;
-            `}
-          >
+        <ExperienceItem key={exp.company}>
+          <CompanyName>{exp.company}</CompanyName>
+          <ExperienceDetails>
             <div>
-              <span
-                css={css`
-                  color: rgba(255, 255, 255, 0.666);
-                `}
-              >
-                From:
-              </span>{" "}
-              {exp.from}
+              <DetailLabel>From:</DetailLabel> {exp.from}
             </div>
             <div>
-              <span
-                css={css`
-                  color: rgba(255, 255, 255, 0.666);
-                `}
-              >
-                To:
-              </span>{" "}
-              {exp.to}
+              <DetailLabel>To:</DetailLabel> {exp.to}
             </div>
             <div>
-              <span
-                css={css`
-                  color: rgba(255, 255, 255, 0.666);
-                `}
-              >
-                Title:
-              </span>{" "}
-              {exp.title}
+              <DetailLabel>Title:</DetailLabel> {exp.title}
             </div>
             <div>
-              <span
-                css={css`
-                  color: rgba(255, 255, 255, 0.666);
-                `}
-              >
-                Summary:
-              </span>{" "}
-              {exp.summary}
+              <DetailLabel>Summary:</DetailLabel> {exp.summary}
             </div>
-          </div>
-        </div>
+          </ExperienceDetails>
+        </ExperienceItem>
       ))}
-    </section>
+    </Section>
   );
 }

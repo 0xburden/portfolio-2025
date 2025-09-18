@@ -1,9 +1,16 @@
 import "./App.css";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { Resume } from "./components/Resume";
+
+const StyledFooter = styled.footer`
+  margin-top: 4rem;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.666);
+`;
 
 const StyledApp = styled.div`
   display: flex;
@@ -39,17 +46,9 @@ function App() {
       <Header />
       <StyledLayoutContainer>
         <Resume />
-        <footer
-          css={css`
-            margin-top: 4rem;
-            font-size: 1rem;
-            text-align: center;
-            padding: 1rem;
-            color: rgba(255, 255, 255, 0.666);
-          `}
-        >
+        <StyledFooter>
           Built by {import.meta.env.VITE_DISPLAY_NAME} &copy; {currentYear}
-        </footer>
+        </StyledFooter>
       </StyledLayoutContainer>
     </StyledApp>
   );
