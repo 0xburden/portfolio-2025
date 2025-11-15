@@ -134,21 +134,19 @@ export function Header(props: ComponentPropsWithRef<"div">) {
             css={css({
               marginTop: "1rem",
               display: "flex",
-              flexDirection: "column",
+              flexDirection: "row",
               alignItems: "center",
               gap: "2rem",
               justifyContent: "center",
               padding: "1rem",
-              "@media (min-width: 768px)": {
-                flexDirection: "row",
-              },
             })}
           >
             <a
               href="mailto:unburdened.dev@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              css={{
+              css={css({
+                whiteSpace: "nowrap",
                 color: "inherit",
                 textDecoration: "none",
                 "&:hover, &:active": {
@@ -157,7 +155,7 @@ export function Header(props: ComponentPropsWithRef<"div">) {
                 "&:visited": {
                   color: "inherit",
                 },
-              }}
+              })}
             >
               ✍️ Email
             </a>
@@ -166,6 +164,7 @@ export function Header(props: ComponentPropsWithRef<"div">) {
               target="_blank"
               rel="noopener noreferrer"
               css={css({
+                whiteSpace: "nowrap",
                 color: "inherit",
                 textDecoration: "none",
                 "&:visited": {
@@ -183,6 +182,7 @@ export function Header(props: ComponentPropsWithRef<"div">) {
               target="_blank"
               rel="noopener noreferrer"
               css={css({
+                whiteSpace: "nowrap",
                 color: "inherit",
                 textDecoration: "none",
                 "&:visited": {
