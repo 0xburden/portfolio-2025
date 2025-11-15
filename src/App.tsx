@@ -69,7 +69,7 @@ const appStyles = css({
 
 const layoutContainerStyles = css({
   boxShadow: "0px 0px 6rem rgba(0, 0, 0, 0.9)",
-  borderRadius: "2.5rem",
+  borderRadius: "0.5rem",
   display: "grid",
   overflowY: "scroll",
   overflowX: "hidden",
@@ -87,6 +87,7 @@ const toggleStyles = css({
   alignItems: "center",
   gap: "0.5rem",
   fontSize: "1rem",
+  zIndex: 2,
 });
 
 function App() {

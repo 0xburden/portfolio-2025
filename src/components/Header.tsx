@@ -16,11 +16,14 @@ const fakeWindowStyles = css({
   borderTop: "1.5rem solid #212124",
   boxShadow: "1px 10px 21px rgba(0, 0, 0, 0.333)",
   padding: "0.5rem",
-  maxHeight: "500px",
   marginTop: "2rem",
+  maxHeight: "600px",
   position: "relative",
   maxWidth: "36rem",
   width: "100%",
+  "@media(min-width: 1024px)": {
+    maxHeight: "500px",
+  },
 });
 
 const fakeWindowButtonContainerStyles = css({
