@@ -4,8 +4,6 @@ export function EducationSection() {
   return (
     <section
       css={css`
-        border-top: 2px dashed rgba(255, 255, 255, 0.666);
-        margin-top: 4rem;
         padding: 2rem;
         width: 100%;
         text-align: left;
